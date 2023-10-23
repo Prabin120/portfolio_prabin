@@ -560,13 +560,21 @@ Ajax, and jQuery for the front end.
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script>
-        var typed = new Typed(".auto-typed",{
-            strings : ["Python Developer", "Software Developer","Backend Developer","Frontend Developer","Programmer"],
+        var typed = new Typed(".auto-typed", {
+            strings: ["Python Developer", "Software Engineer", "Backend Developer", "Frontend Developer", "Programmer"],
             typeSpeed: 50,
             backSpeed: 50,
-            looped : true
+            loop: true
+        });
 
-        })
+        // Start the loop
+        typed.start();
+
+        // Add an event listener to the `onLastStringBackspaced` event
+        typed.addEventListener("onLastStringBackspaced", function() {
+            // Restart the loop
+            typed.start();
+        });
     </script>
     <script>
         let targetOffset = $("#about").offset().top;
