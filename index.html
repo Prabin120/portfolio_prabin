@@ -566,15 +566,6 @@ Ajax, and jQuery for the front end.
             backSpeed: 50,
             loop: true
         });
-
-        // Start the loop
-        typed.start();
-
-        // Add an event listener to the `onLastStringBackspaced` event
-        typed.addEventListener("onLastStringBackspaced", function() {
-            // Restart the loop
-            typed.start();
-        });
     </script>
     <script>
         let targetOffset = $("#about").offset().top;
